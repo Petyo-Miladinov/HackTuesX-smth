@@ -18,7 +18,9 @@
                 </div>
                 <div id = "buttonsField">
                     <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
-                    <button class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled>Download</button>
+                    <form method="get", action="/download">
+                        <input type="submit" class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled value="Download">
+                    </form>
                     <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
                 </div>
             </section>
