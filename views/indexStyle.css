@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   
 html, body{
@@ -23,11 +24,11 @@ html, body{
 
 #title{
     grid-area: a;
-    border-bottom: gray;
-    border-radius: 10%;
-    border-width: 5px;
+    background-color: beige;
+    border-bottom: 4mm ridge rgba(211, 220, 50, .6);
+    padding-top: 3%;
+    margin: 0%;
     text-align: center;
-    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -54,11 +55,35 @@ html, body{
     justify-content: center;
 }
 
+.actionButton{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10%;
+    color: #543a1d;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: rgb(207, 150, 28);
+    height: 70%;
+    width: 90%;
+}
+
+.actionButton:hover{
+    background-color: #543a1d;
+    color: rgb(207, 150, 28);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
 
 
 #footer{
     grid-area: c;
+    background-color: beige;
+    border-top: 4mm ridge rgba(211, 220, 50, .6);
+    padding-bottom: 3%;
+    margin: 0%;
     text-align: center;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
