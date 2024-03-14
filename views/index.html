@@ -1,34 +1,33 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="indexStyle.css"/>
+        <script src = "utilities.js"></script>
+        <title>Scanaryo</title>
+    </head>
 
-<head>
-    <link rel="stylesheet" href="indexStyle.css"/>
-    
-    <title>Scanaryo</title>
-</head>
+    <body>
+        <main>
+            <section id = "title" class = "wraper">
+                <h1>Scanaryo</h1>
+            </section>
 
-<body>
-    
-    <div id = "wraper">
+            <section id = "holderField" class = "wraper">
+                <div id = "displayField">
+                    <p>here your download will start</p>
+                </div>
+                <div id = "buttonsField">
+                    <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
+                    <button class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled>Download</button>
+                    <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
+                </div>
+            </section>
 
-        <h1 id = "title">Scanaryo</h1>
+            <section id = "footer" class = "wraper">
+                <p>Contacts</p>
+            </section>
 
-        <div id = "holderField">
-            <div id = "displayField">
-                <p>here your download will start</p>
-            </div>
-            <div id = "buttonsField">
-                <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
-                <button class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled>Download</button>
-                <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
-            </div>
-        </div>
+        </main>
 
-        <div id = "footer">
-            <p>Contacts</p>
-        </div>
-
-    </div>
-
-    <script src = "utilities.js"></script>
-
-</body>
+    </body>
+</html>

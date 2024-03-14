@@ -1,67 +1,68 @@
 *{
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   
 html, body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration:none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
-#wraper{
+h1{
+    display: block;
+}
+
+.wraper{
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 15% 75% 10%;
-    grid-template-areas: 
-    "a"
-    "b"
-    "c";
-    position:absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0 2%;
+    align-items: center;
+    padding: 2%;
 }
 
 #title{
-    grid-area: a;
-    display: block;
     background-color: beige;
     border-bottom: 4mm ridge rgba(211, 220, 50, .6);
-    padding-top: 3%;
+    padding-top: 2%;
     margin: 0%;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
 }
 
 #holderField{
-    grid-area: b;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
+    width: 100%;
+    height: fit-content;
 }
 
 #displayField{
-    display: block;
+    position: static;
     text-align: center;
     justify-content: center;
-    text-decoration:none;
-    height: 65%;
+    width: 100%;
+    height: max-content;
+    padding: 2%;
 }
 
 #buttonsField{
-    display: block;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25%;
+    padding-bottom: 25%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    position: static;
     text-align: center;
     justify-content: center;
+    width: 100%;
+    height: max-content;
+    max-height: max-content;
 }
 
 .actionButton{
+    display: inline-block;
     margin: 10px;
     padding: 10px;
     border: none;
@@ -92,11 +93,21 @@ html, body{
 
 
 #footer{
-    grid-area: c;
-    display: block;
     background-color: beige;
+    border-top: 4mm ridge rgba(211, 220, 50, .6);
+    padding-bottom: 2%;
+    margin: 0%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    bottom: 0;
+
+    /* background-color: beige;
     border-top: 4mm ridge rgba(211, 220, 50, .6);
     padding-bottom: 3%;
     margin: 0%;
     text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: absolute; */
 }
