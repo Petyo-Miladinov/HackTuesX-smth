@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+  
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#wraper{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 75% 10%;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c";
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+#title{
+    grid-area: a;
+    border-bottom: gray;
+    border-radius: 10%;
+    border-width: 5px;
+    text-align: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#holderField{
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#displayField{
+    text-align: center;
+    justify-content: center;
+    text-decoration:none;
+    height: 65%;
+}
+
+#buttonsField{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+#footer{
+    grid-area: c;
+    text-align: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
