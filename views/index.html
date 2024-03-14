@@ -2,27 +2,33 @@
 
 <head>
     <link rel="stylesheet" href="indexStyle.css"/>
-    <title>PlaceHolder</title>
+    
+    <title>Scanaryo</title>
 </head>
 
 <body>
+    
     <div id = "wraper">
 
-        <h1 id = "title">PlaceHolder</h1>
+        <h1 id = "title">Scanaryo</h1>
 
         <div id = "holderField">
             <div id = "displayField">
-                <p>this is a test text :D</p>
+                <p>here your download will start</p>
             </div>
             <div id = "buttonsField">
-                <button class = "actionButton">START SCAN</button>
+                <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
+                <button class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled>Download</button>
+                <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
             </div>
         </div>
 
         <div id = "footer">
-            <p>this is the footer</p>
+            <p>Contacts</p>
         </div>
 
     </div>
+
+    <script src = "utilities.js"></script>
 
 </body>

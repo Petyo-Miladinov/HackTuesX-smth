@@ -6,6 +6,7 @@
 html, body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #wraper{
@@ -24,6 +25,7 @@ html, body{
 
 #title{
     grid-area: a;
+    display: block;
     background-color: beige;
     border-bottom: 4mm ridge rgba(211, 220, 50, .6);
     padding-top: 3%;
@@ -42,6 +44,7 @@ html, body{
 }
 
 #displayField{
+    display: block;
     text-align: center;
     justify-content: center;
     text-decoration:none;
@@ -49,8 +52,11 @@ html, body{
 }
 
 #buttonsField{
+    display: block;
     padding-top: 50px;
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
     text-align: center;
     justify-content: center;
 }
@@ -66,8 +72,8 @@ html, body{
     text-decoration: none;
     overflow: hidden;
     background-color: rgb(207, 150, 28);
-    height: 70%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
 }
 
 .actionButton:hover{
@@ -75,12 +81,19 @@ html, body{
     color: rgb(207, 150, 28);
     transition: all 0.4s ease;
     cursor: pointer;
-  }
+}
+
+.actionButton:disabled{
+    background-color: #292929;
+    color: rgb(81, 81, 81);
+    cursor: not-allowed;
+}
 
 
 
 #footer{
     grid-area: c;
+    display: block;
     background-color: beige;
     border-top: 4mm ridge rgba(211, 220, 50, .6);
     padding-bottom: 3%;
