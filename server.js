@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     if(req.cookies.id){
-        if(fs.existsSync(__dirname + "/3d/" + req.cookies.id) == true){
+        if(fs.existsSync(__dirname + "/3d/" + req.cookies.id + "/model.txt") == true){
             console.log("aaa")
             res.render('index', {disabled: ""})
         }
