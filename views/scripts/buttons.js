@@ -1,9 +1,3 @@
-
-function initClone(){
-    document.getElementById('downloadBtn').disabled = false;
-    document.getElementById('visualizationBtn').disabled = false;
-}
-
 function initDownload(){
     const downloadPara = document.createElement("p");
     const downloadParaText = document.createTextNode("Download initiated");

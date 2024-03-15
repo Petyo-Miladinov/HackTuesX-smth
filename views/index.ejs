@@ -4,6 +4,10 @@
         <link rel="stylesheet" href="indexStyle.css"/>
         <script src = "utilities.js"></script>
         <title>Scanaryo</title>
+    <script>
+        setTimeout(() => { location.reload()}, 10000)
+        
+    </script>
     </head>
 
     <body>
@@ -17,11 +21,12 @@
                     <p>here your download will start</p>
                 </div>
                 <div id = "buttonsField">
-                    <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
                     <form method="get", action="/download">
-                        <input type="submit" class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled value="Download">
+                        <input type="submit" class="actionButton" id="downloadBtn" <%=disabled%> value="Download">
                     </form>
-                    <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
+                    <form method="get", action="/logout">
+                        <input type="submit" class = "actionButton" id = "downloadBtn" value="Log out">
+                    </form>
                 </div>
             </section>
 

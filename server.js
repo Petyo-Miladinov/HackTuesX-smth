@@ -9,10 +9,18 @@ app.use(cookieParser());
 app.use(express.static('views'));
 app.set('view engine', 'ejs') 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     if(req.cookies.id){
-        res.render('index')
+        if(fs.existsSync(__dirname + "/3d/" + req.cookies.id) == true){
+            console.log("aaa")
+            res.render('index', {disabled: ""})
+        }
+        else{
+            res.render('index', { disabled: "disabled"})
+        }
+        
     }
     else{
         res.render('account')
@@ -39,24 +47,35 @@ app.get('/new_file', async(req, res) => {
         res.send("no id. f u")
     }
     else{
-        console.log(fs.existsSync("3d/" + req.query.id))
         if(fs.existsSync(__dirname + "/3d/" + req.query.id) == false){
             fs.mkdir("3d/" + req.query.id, (err) => {})
         }
-        fs.writeFile("3d/" + req.query.id + "model.txt", "", (err) =>{})
+        fs.writeFile("3d/" + req.query.id + "/model.txt", "", (err) =>{})
         res.send("Done")
     }
 })
 
-app.post('/login', (req, res) =>{
-    let id = req.body.user_id
-    console.log(req)
-    res.cookie("id", id)
+app.post('/login', async (req, res) =>{
+    let data = req.body 
+    console.log(data.user_id)
+    res.cookie("id", data.user_id)
+    res.redirect("/")
+})
+
+app.get('/logout', (req, res) =>{
+    res.clearCookie("id")
     res.redirect("/")
 })
 
 app.get('/download', (req, res) =>{
-    res.download(__dirname + "/3d/model.txt")
+    let cookie = req.cookies.id
+    if(cookie != undefined)
+    {
+        res.download(__dirname + "/3d/" + cookie + "/model.txt")
+    }
+    else{
+        res.send("err")
+    }
 })
 
 app.listen(port, () => {
