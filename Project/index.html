@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="indexStyle.css"/>
+    
+    <title>Scanaryo</title>
+</head>
+
+<body>
+    
+    <div id = "wraper">
+
+        <h1 id = "title">Scanaryo</h1>
+
+        <div id = "holderField">
+            <div id = "displayField">
+                <p>here your download will start</p>
+            </div>
+            
+            <div style="display: none;" id="3D canvas">
+                <canvas class="webgl"></canvas>
+            </div>
+
+            <div id = "buttonsField">
+                <button class = "actionButton" id = "starScanBtn" onclick="initClone()">Start scan</button>
+                <button class = "actionButton" id = "downloadBtn" onclick="initDownload()" disabled>Download</button>
+                <button class = "actionButton" id = "visualizationBtn" onclick="initVisualization()" disabled>Visualize</button>
+            </div>
+        </div>
+
+        <div id = "footer">
+            <p>Contacts</p>
+        </div>
+
+    </div>
+    <script src = "./scripts/buttons.js"></script>
+    <script type="module" src = "./scripts/canvas.js"></script>
+    <script type="module">
+        import {createObject} from "./scripts/canvas.js"
+        document.getElementById("visualizationBtn").addEventListener("click", ()=>{createObject()})
+    </script>
+
+</body>
