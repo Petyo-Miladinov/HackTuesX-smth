@@ -2,15 +2,21 @@ const express  = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const fs = require('fs')
-
+const cookieParser = require('cookie-parser');
 
 const port = 80
+app.use(cookieParser());
 app.use(express.static('views'));
 app.set('view engine', 'ejs') 
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.render('account')
+    if(req.cookies.id){
+        res.render('index')
+    }
+    else{
+        res.render('account')
+    }
 })
 
 app.get('/add', async (req, res) => {
@@ -40,6 +46,13 @@ app.get('/new_file', async(req, res) => {
         fs.writeFile("3d/" + req.query.id + "model.txt", "", (err) =>{})
         res.send("Done")
     }
+})
+
+app.post('/login', (req, res) =>{
+    let id = req.body.user_id
+    console.log(req)
+    res.cookie("id", id)
+    res.redirect("/")
 })
 
 app.get('/download', (req, res) =>{
