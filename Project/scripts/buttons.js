@@ -14,6 +14,9 @@ function initDownload(){
 }
 
 function initVisualization(){
+    // document.getElementById("displayField").style.display = "none"
+    document.getElementById("3D canvas").style.display = "block"
+
     const visPara = document.createElement("p");
     const visParaText = document.createTextNode("Visualization initiated");
     visPara.appendChild(visParaText);
@@ -25,3 +28,4 @@ function initVisualization(){
 function awaitPacket(){
     
 }
+
